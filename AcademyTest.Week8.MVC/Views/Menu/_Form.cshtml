@@ -1,0 +1,25 @@
+﻿@model MenuViewModel
+
+@if (ViewBag.Readonly == false)
+{
+    <div class="form-group">
+    <label asp-for="CodiceMenu"></label>
+    <input asp-for="CodiceMenu" class="form-control"/>
+    <span asp-validation-for="CodiceMenu" class="text-danger"></span>
+    </div>
+}
+else
+{
+    <div class="form-group">
+    <label asp-for="CodiceMenu"></label>
+    <input asp-for="CodiceMenu" class="form-control" readonly/>
+    <span asp-validation-for="CodiceMenu" class="text-danger"></span>
+    </div>
+}
+
+
+<div class="form-group">
+    <label asp-for="NomeMenu"></label>
+    <input asp-for="NomeMenu" class="form-control"/>
+    <span asp-validation-for="NomeMenu" class="text-danger"></span>
+</div>

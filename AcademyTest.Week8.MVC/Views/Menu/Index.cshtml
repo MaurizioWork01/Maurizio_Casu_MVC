@@ -1,0 +1,36 @@
+﻿@model ICollection<MenuViewModel>
+<h1>Ecco la lista dei Menu</h1>
+
+
+<a type=button class="btn btn-primary" asp-controller="Menu" asp-action="Create">Inserisci nuovo menu</a>
+<table class="table table-hover table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>CodiceMenu</th>
+            <th>NomeMenu</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.CodiceMenu</td>
+                <td>@item.NomeMenu</td>
+                <td> 
+                   @* pulsante "Visualizza Dettagli"*@
+                   <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.CodiceMenu" class="btn btn-primary">Visualizza dettagli</a>
+                   <a asp-controller="Menu" asp-action="Edit" asp-route-id="@item.CodiceMenu" class="btn btn-primary">Modifica</a>
+                   <a asp-controller="Menu" asp-action="Delete" asp-route-id="@item.CodiceMenu" class="btn btn-danger">Elimina</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Totale</th>
+            <th>@Model.Count</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,27 @@
+﻿@model MenuViewModel
+<h1>Modifica Menu</h1>
+@{
+    ViewBag.Readonly = true;
+}
+<form method="post">
+@*<div class="form-group">
+    <label asp-for="CodiceMenu"></label>
+    <input asp-for="CodiceMenu" class="form-control" readonly/>
+    <span asp-validation-for="CodiceMenu" class="text-danger"></span>
+</div>
+
+
+<div class="form-group">
+    <label asp-for="NomeMenu"></label>
+    <input asp-for="NomeMenu" class="form-control"/>
+    <span asp-validation-for="NomeMenu" class="text-danger"></span>
+</div>
+
+
+*@
+<partial name="_Form" model=Model />
+
+<input type="submit" value="Salva Modifica" class="btn btn-primary" />
+<input type="reset" value="Reset" class="btn btn-primary" />
+<a class="btn btn-primary" asp-controller="Menu" asp-action="Index">Indietro</a>
+</form>
